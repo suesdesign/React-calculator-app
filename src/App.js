@@ -1,15 +1,12 @@
 import React, { Component } from "react";
 import "./App.css";
 import { Buttons } from "./Buttons/Buttons";
-//import "./CalulatorOutput/CalulatorOutput";
-
-/*class Buttons extends Component {
-  render() {
-    return <button className="button">{this.props.value}</button>;
-  }
-}*/
+import CalculatorInput from "./CalculatorInput/CalculatorInput";
 
 class Calculator extends Component {
+  state = {
+    input: 0
+  };
   renderButton(i) {
     return <Buttons value={i} />;
   }
@@ -18,6 +15,7 @@ class Calculator extends Component {
       <div class="App">
         <h1>Calculator</h1>
         <div className="Calculator">
+          <CalculatorInput calculation={this.state.input} />
           <div className="first-row">
             {this.renderButton("Clear")}
             {this.renderButton("÷")}
