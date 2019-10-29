@@ -1,22 +1,30 @@
 .App {
   text-align: center;
+  margin: 0 auto;
 }
 
-.App-logo {
-  height: 40vmin;
+.Calculator {
+  margin: 0 auto;
+  width: 160px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.Calculator button {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  float: left;
 }
 
-.App-link {
-  color: #09d3ac;
+.first-row button:first-child {
+  width: 120px;
+}
+
+.last-row button:first-child {
+  width: 80px;
+}
+
+.row,
+.first-row,
+.last-row {
+  clear: both;
 }
