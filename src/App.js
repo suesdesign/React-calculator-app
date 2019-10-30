@@ -8,7 +8,7 @@ import CalculatorInput from "./CalculatorInput/CalculatorInput";
 
 class App extends Component {
   state = {
-    input: 0
+    calculation: "hello"
   };
   renderButton(i) {
     return <Buttons value={i} />;
@@ -18,7 +18,7 @@ class App extends Component {
       <div class="App">
         <h1>Calculator</h1>
         <div className="Calculator">
-          <CalculatorInput calculation={this.state.input} />
+          <CalculatorInput calculation={this.state.calculation} />
           <div className="first-row">
             <InputClear value="Clear" />
             {this.renderButton("÷")}
