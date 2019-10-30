@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import "./App.css";
-import { Buttons } from "./Buttons/Buttons";
+import Buttons from "./Buttons/Buttons";
+import InputClear from "./Buttons/InputClear";
+import EqualsButton from "./Buttons/EqualsButton";
+
 import CalculatorInput from "./CalculatorInput/CalculatorInput";
 
-class Calculator extends Component {
+class App extends Component {
   state = {
     input: 0
   };
@@ -17,7 +20,7 @@ class Calculator extends Component {
         <div className="Calculator">
           <CalculatorInput calculation={this.state.input} />
           <div className="first-row">
-            {this.renderButton("Clear")}
+            <InputClear value="Clear" />
             {this.renderButton("÷")}
           </div>
           <div className="row">
@@ -41,7 +44,7 @@ class Calculator extends Component {
           <div className="last-row">
             {this.renderButton(0)}
             {this.renderButton(".")}
-            {this.renderButton("=")}
+            <EqualsButton value="=" />
           </div>
         </div>
       </div>
@@ -49,4 +52,4 @@ class Calculator extends Component {
   }
 }
 
-export default Calculator;
+export default App;
