@@ -3,7 +3,8 @@ import React from "react";
 const calculatorInput = props => {
   return (
     <div className="CalculatorInput">
-      <p>Calculation: {props.calculation}</p>
+      <p>Calculation: </p>
+      <p>{props.calculation}</p>
     </div>
   );
 };

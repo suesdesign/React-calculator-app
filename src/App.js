@@ -8,7 +8,16 @@ import CalculatorInput from "./CalculatorInput/CalculatorInput";
 
 class App extends Component {
   state = {
-    calculation: "hello"
+    calculation: ""
+  };
+
+  clickHandler = event => {
+    const pressedButton = event.target.innerHTML;
+    console.log(pressedButton);
+    let calc = this.state.calculation;
+    calc += pressedButton;
+    this.setState({ calculation: calc });
+    console.log(calc);
   };
 
   render() {
@@ -19,29 +28,29 @@ class App extends Component {
           <CalculatorInput calculation={this.state.calculation} />
           <div className="first-row">
             <InputClear value="Clear" />
-            <Buttons value="÷" />
+            <Buttons value="÷" clicked={this.clickHandler} />
           </div>
           <div className="row">
-            <Buttons value="7" />
-            <Buttons value="8" />
-            <Buttons value="9" />
-            <Buttons value="x" />
+            <Buttons value="7" clicked={this.clickHandler} />
+            <Buttons value="8" clicked={this.clickHandler} />
+            <Buttons value="9" clicked={this.clickHandler} />
+            <Buttons value="x" clicked={this.clickHandler} />
           </div>
           <div className="row">
-            <Buttons value="4" />
-            <Buttons value="5" />
-            <Buttons value="6" />
-            <Buttons value="-" />
+            <Buttons value="4" clicked={this.clickHandler} />
+            <Buttons value="5" clicked={this.clickHandler} />
+            <Buttons value="6" clicked={this.clickHandler} />
+            <Buttons value="-" clicked={this.clickHandler} />
           </div>
           <div className="row">
-            <Buttons value="1" />
-            <Buttons value="2" />
-            <Buttons value="3" />
-            <Buttons value="+" />
+            <Buttons value="1" clicked={this.clickHandler} />
+            <Buttons value="2" clicked={this.clickHandler} />
+            <Buttons value="3" clicked={this.clickHandler} />
+            <Buttons value="+" clicked={this.clickHandler} />
           </div>
           <div className="last-row">
-            <Buttons value="0" />
-            <Buttons value="." />
+            <Buttons value="0" clicked={this.clickHandler} />
+            <Buttons value="." clicked={this.clickHandler} />
             <EqualsButton value="=" />
           </div>
         </div>
