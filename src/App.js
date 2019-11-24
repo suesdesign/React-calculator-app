@@ -24,7 +24,7 @@ class App extends Component {
     calculation = this.state.calculation;
     calculation = calculation.replace(/x/, "*");
     calculation = calculation.replace(/÷/, "/");
-    let equals = eval(calculation);
+    let equals = window.math.evaluate(calculation);
     this.setState({ calculation: equals });
   };
 
